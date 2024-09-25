@@ -8,6 +8,7 @@ from functools import wraps
 from datetime import datetime
 
 app = Flask(__name__)
+application = app
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
