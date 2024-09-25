@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   TIMETABLE
+{% endblock %}
+
+{% block main %}
+<table style='margin-top: 30px' class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"> Day </th>
+        <th scope="col"> Subject </th>
+        <th scope="col"> Time </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for day, values in tt.items() %}
+          <tr>
+            <td rowspan="{{ len_days[day] }}"> {{ day }} </td>
+            {% for value in values %}
+            <td>  {{ value[0] }}  </td>
+            <td>  {{ value[1] }}  </td>
+
+          </tr>
+            {% endfor %}
+          {% endfor %}
+        </body>
+      </table>
+    </tbody>
+{% endblock %}

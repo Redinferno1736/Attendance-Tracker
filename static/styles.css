@@ -1,0 +1,19 @@
+body {
+    background-color: lightgrey;
+}
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+/* Custom Navbar Colors */
+.custom-navbar {
+    background-color: #9CAF88;
+  }
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}

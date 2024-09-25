@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   REPORT
+{% endblock %}
+
+{% block main %}
+<table style='margin-top: 30px' class="table table-striped">
+    <tr>
+        <th>Subject</th>
+        <th>Attendance Percentage</th>
+    </tr>
+    {% for subject, data in attendance_percentage.items() %}
+    <tr>
+        <td>{{ subject }}</td>
+        {% if (data.total) == 0 %}
+            <td>0.00%</td>
+        {% else %}
+            <td>{{ ((data.attended / data.total) * 100) | round(2) }}%</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h2>Overall Attendance: {{ overall_percentage | round(2) }}%</h2>
+{% endblock %}

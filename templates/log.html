@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Log
+{% endblock %}
+
+{% block main %}
+<form action="/log" method="POST">
+    <div class="mb-3">
+        <input autofocus class="form-control" name="subject" placeholder="Subject" type="text" required>
+    </div>
+    <div class="mb-3">
+        <select class="form-control" name="day" required>
+            <option value="" disabled selected>Select Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" name="time" type="time" required>
+    </div>
+    <button name="Save" style='width: 80px' class=" form-group btn btn-primary" type="submit">Save</button>
+</form>
+{% endblock %}
